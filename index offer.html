@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gold Standard Whey Offer | First Nutrition</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            red: { 500: '#f43131', 600: '#d82222', 700: '#b91818' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(244,49,49,.08), transparent 24%),
+        radial-gradient(circle at 95% 10%, rgba(244,49,49,.06), transparent 16%),
+        linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: #f43131; color: #fff; }
+
+    .fnx-wrap {
+      width: min(1320px, 94%);
+      margin: 0 auto;
+    }
+
+    .fnx-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e9edf2;
+    }
+
+    .fnx-header-inner {
+      min-height: 78px;
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .fnx-logo img {
+      height: 56px;
+      width: auto;
+      display: block;
+    }
+
+    .fnx-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .fnx-nav a {
+      text-decoration: none;
+      color: #5b6472;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      transition: .25s ease;
+      white-space: nowrap;
+    }
+
+    .fnx-nav a:hover,
+    .fnx-nav a.active {
+      color: #0a0b0f;
+    }
+
+    .fnx-search {
+      width: min(320px,100%);
+      height: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 14px 0 16px;
+      border: 1px solid #ececef;
+      background: #f7f7f8;
+      border-radius: 999px;
+    }
+
+    .fnx-search input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #555;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .fnx-search svg {
+      width: 18px;
+      height: 18px;
+      stroke: #9aa1ac;
+      stroke-width: 2;
+      fill: none;
+      flex: 0 0 auto;
+    }
+
+    .fnx-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      white-space: nowrap;
+    }
+
+    .fnx-right a {
+      text-decoration: none;
+      color: #555c67;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .panel {
+      background: rgba(255,255,255,.96);
+      border: 1px solid #e8edf3;
+      border-radius: 30px;
+      box-shadow: 0 18px 55px rgba(10,11,15,.06);
+    }
+
+    .hero-product-box {
+      min-height: 420px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at center, rgba(244,49,49,.08), transparent 54%),
+        linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
+      border: 1px solid #ebeff4;
+    }
+
+    .main-product-image {
+      width: 100%;
+      max-width: 340px;
+      max-height: 340px;
+      object-fit: contain;
+      transition: .25s ease;
+      filter: none !important;
+      box-shadow: none !important;
+    }
+
+    .step-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #0a0b0f;
+      color: #fff;
+      font-weight: 900;
+      font-size: 16px;
+      flex: 0 0 auto;
+    }
+
+    .choice-card {
+      position: relative;
+      border: 2px solid #e8edf3;
+      border-radius: 24px;
+      background: #fff;
+      transition: .25s ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .choice-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(244,49,49,.42);
+      box-shadow: 0 16px 34px rgba(10,11,15,.07);
+    }
+
+    .choice-card.selected {
+      border-color: #f43131;
+      box-shadow: 0 18px 40px rgba(244,49,49,.12);
+    }
+
+    .choice-card.selected::after {
+      content: "SELECTED";
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #f43131;
+      color: white;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      padding: 7px 10px;
+      border-radius: 999px;
+      z-index: 3;
+    }
+
+    .image-wrap {
+      background: linear-gradient(180deg, #fbfbfc 0%, #f3f5f8 100%);
+      border: 1px solid #edf1f5;
+      border-radius: 22px;
+    }
+
+    .flavor-preview {
+      width: 100%;
+      height: 100px;
+      object-fit: contain;
+      display: block;
+      filter: none !important;
+      box-shadow: none !important;
+    }
+
+    .extra-preview {
+      width: 100%;
+      height: 170px;
+      object-fit: contain;
+      display: block;
+      filter: none !important;
+      box-shadow: none !important;
+    }
+
+    .option-pill {
+      border: 1.5px solid #dbe2ea;
+      background: #fff;
+      color: #0f172a;
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: .22s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .option-pill:hover {
+      border-color: rgba(244,49,49,.4);
+      background: #fff8f8;
+    }
+
+    .option-pill.selected {
+      border-color: #f43131;
+      background: #f43131;
+      color: #fff;
+      box-shadow: 0 10px 28px rgba(244,49,49,.18);
+    }
+
+    .summary-card {
+      position: sticky;
+      top: 98px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .summary-row:last-child {
+      border-bottom: 0;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #d1d5db;
+      flex: 0 0 auto;
+    }
+
+    .status-dot.active {
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34,197,94,.12);
+    }
+
+    .tiny-note {
+      font-size: 12px;
+      line-height: 1.7;
+      color: #6b7280;
+    }
+
+    @media(max-width:1180px) {
+      .fnx-header-inner {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 14px 0;
+      }
+
+      .fnx-search { width: 100%; }
+    }
+
+    @media(max-width:1024px) {
+      .summary-card { position: static; }
+    }
+
+    @media(max-width:640px) {
+      .extra-preview { height: 140px; }
+      .hero-product-box { min-height: 320px; }
+      .main-product-image { max-width: 250px; max-height: 250px; }
+      .flavor-preview { height: 82px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="fnx-header">
+    <div class="fnx-wrap">
+      <div class="fnx-header-inner">
+        <a href="#" class="fnx-logo">
+          <img src="https://www.firstnutrition.com/wp-content/uploads/2026/05/firstnutritionjo-logo.webp" alt="First Nutrition">
+        </a>
+
+        <nav class="fnx-nav">
+          <a href="#">SHOP</a>
+          <a href="#">CATEGORIES</a>
+          <a href="#" class="active">HOT OFFERS</a>
+          <a href="#">OUR BRANDS</a>
+          <a href="#">ABOUT US</a>
+          <a href="#">MORE+</a>
+        </nav>
+
+        <div class="fnx-search">
+          <input type="text" placeholder="Search...">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        </div>
+
+        <div class="fnx-right">
+          <a href="#">LOGIN / REGISTER</a>
+          <a href="#">العربية</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-8 lg:py-12">
+    <div class="fnx-wrap">
+      <div class="grid lg:grid-cols-[1fr_390px] gap-8 xl:gap-10 items-start">
+
+        <div class="space-y-8">
+          <!-- HERO -->
+          <section class="panel p-6 lg:p-8">
+            <div class="grid lg:grid-cols-[420px_1fr] gap-8 items-center">
+              <div class="hero-product-box flex items-center justify-center p-6">
+                <img
+                  id="mainProductImage"
+                  class="main-product-image"
+                  src="https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25.webp?raw=true"
+                  alt="Gold Standard 100% Whey"
+                >
+              </div>
+
+              <div>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 text-red-600 text-[11px] font-black uppercase tracking-[.18em] mb-5">
+                  Combo Offer
+                </div>
+
+                <h1 class="text-[34px] lg:text-[52px] font-black tracking-[-0.045em] leading-[0.96] text-[#0a0b0f] mb-4">
+                  Gold Standard 100% Whey Offer
+                </h1>
+
+                <p class="text-[17px] text-[#5b6472] leading-8 max-w-2xl mb-6">
+                  Pick your whey flavor, choose one extra product, and if that product has flavors, choose its flavor too.
+                </p>
+
+                <div class="flex flex-wrap gap-3 mb-7">
+                  <div class="px-5 py-3 rounded-2xl bg-[#0a0b0f] text-white">
+                    <div class="text-[11px] font-black uppercase tracking-widest text-white/60">Main Product</div>
+                    <div class="text-sm font-black">Gold Standard Whey 5 lbs</div>
+                  </div>
+
+                  <div class="px-5 py-3 rounded-2xl bg-red-500 text-white">
+                    <div class="text-[11px] font-black uppercase tracking-widest text-white/70">Final Price</div>
+                    <div class="text-sm font-black">100 JOD</div>
+                  </div>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-4">
+                  <div class="flex items-center gap-3 p-4 rounded-2xl bg-[#f8fafc] border border-[#e8edf3]">
+                    <span class="step-badge">1</span>
+                    <div>
+                      <div class="font-black text-[#0a0b0f]">Whey Flavor</div>
+                      <div class="text-sm text-[#6b7280]">Choose 1</div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-3 p-4 rounded-2xl bg-[#f8fafc] border border-[#e8edf3]">
+                    <span class="step-badge">2</span>
+                    <div>
+                      <div class="font-black text-[#0a0b0f]">Extra Product</div>
+                      <div class="text-sm text-[#6b7280]">Choose 1</div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-3 p-4 rounded-2xl bg-[#f8fafc] border border-[#e8edf3]">
+                    <span class="step-badge">3</span>
+                    <div>
+                      <div class="font-black text-[#0a0b0f]">Extra Flavor</div>
+                      <div class="text-sm text-[#6b7280]">If needed</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- STEP 1 -->
+          <section class="panel p-6 lg:p-8">
+            <div class="flex items-start gap-4 mb-7">
+              <span class="step-badge">1</span>
+              <div>
+                <h2 class="text-2xl lg:text-3xl font-black tracking-[-0.03em] text-[#0a0b0f]">Choose your whey flavor</h2>
+                <p class="text-[#6b7280] mt-1">Select one flavor for Gold Standard 100% Whey 5 lbs.</p>
+              </div>
+            </div>
+
+            <div id="wheyFlavorGrid" class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4"></div>
+          </section>
+
+          <!-- STEP 2 -->
+          <section class="panel p-6 lg:p-8">
+            <div class="flex items-start gap-4 mb-7">
+              <span class="step-badge">2</span>
+              <div>
+                <h2 class="text-2xl lg:text-3xl font-black tracking-[-0.03em] text-[#0a0b0f]">Choose one extra product</h2>
+                <p class="text-[#6b7280] mt-1">Pick one product to complete your offer.</p>
+              </div>
+            </div>
+
+            <div id="extraGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+          </section>
+
+          <!-- STEP 3 -->
+          <section id="extraFlavorSection" class="panel p-6 lg:p-8 hidden">
+            <div class="flex items-start gap-4 mb-7">
+              <span class="step-badge">3</span>
+              <div>
+                <h2 id="extraFlavorTitle" class="text-2xl lg:text-3xl font-black tracking-[-0.03em] text-[#0a0b0f]">Choose flavor</h2>
+                <p class="text-[#6b7280] mt-1">This product has multiple flavors. Choose one flavor.</p>
+              </div>
+            </div>
+
+            <div id="extraFlavorGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+          </section>
+        </div>
+
+        <!-- SUMMARY -->
+        <aside class="summary-card panel p-6 lg:p-7">
+          <div class="mb-6">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 text-red-600 text-[11px] font-black uppercase tracking-[.18em] mb-4">
+              Offer Summary
+            </div>
+
+            <h3 class="text-2xl font-black tracking-[-0.03em] text-[#0a0b0f]">
+              Your Combo
+            </h3>
+
+            <p class="text-sm text-[#6b7280] mt-2">
+              Clear summary before adding to cart.
+            </p>
+          </div>
+
+          <div class="rounded-[28px] bg-[#f8fafc] border border-[#e8edf3] p-5 mb-5">
+            <div class="summary-row">
+              <span class="text-sm font-bold text-[#6b7280]">Main Product</span>
+              <strong class="text-sm text-right text-[#0a0b0f]">Gold Standard Whey 5 lbs</strong>
+            </div>
+
+            <div class="summary-row">
+              <span class="text-sm font-bold text-[#6b7280]">Whey Flavor</span>
+              <strong id="selectedWheyFlavorText" class="text-sm text-right text-[#0a0b0f]">Not selected</strong>
+            </div>
+
+            <div class="summary-row">
+              <span class="text-sm font-bold text-[#6b7280]">Extra Product</span>
+              <strong id="selectedExtraText" class="text-sm text-right text-[#0a0b0f]">Not selected</strong>
+            </div>
+
+            <div class="summary-row">
+              <span class="text-sm font-bold text-[#6b7280]">Extra Flavor</span>
+              <strong id="selectedExtraFlavorText" class="text-sm text-right text-[#0a0b0f]">—</strong>
+            </div>
+
+            <div class="summary-row">
+              <span class="text-sm font-bold text-[#6b7280]">Final Price</span>
+              <strong class="text-[28px] leading-none text-red-600 font-black">100 JOD</strong>
+            </div>
+          </div>
+
+          <div class="space-y-3 mb-5">
+            <div class="flex items-center gap-3 p-4 rounded-2xl border border-[#e8edf3] bg-white">
+              <span id="step1Dot" class="status-dot"></span>
+              <div>
+                <div class="font-black text-sm text-[#0a0b0f]">Whey flavor selected</div>
+                <div class="tiny-note">Choose one whey flavor</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-4 rounded-2xl border border-[#e8edf3] bg-white">
+              <span id="step2Dot" class="status-dot"></span>
+              <div>
+                <div class="font-black text-sm text-[#0a0b0f]">Extra product selected</div>
+                <div class="tiny-note">Choose one extra product</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-4 rounded-2xl border border-[#e8edf3] bg-white">
+              <span id="step3Dot" class="status-dot"></span>
+              <div>
+                <div class="font-black text-sm text-[#0a0b0f]">Extra flavor selected</div>
+                <div class="tiny-note">Only required for products with flavors</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="warningBox" class="hidden mb-4 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-600 p-4 text-sm font-bold">
+            Please complete all required selections.
+          </div>
+
+          <button
+            id="addToCartBtn"
+            class="w-full h-14 rounded-2xl bg-[#0a0b0f] text-white font-black uppercase tracking-wide transition hover:bg-red-500 disabled:bg-[#d5dae2] disabled:text-white disabled:cursor-not-allowed"
+            disabled
+          >
+            Add To Cart
+          </button>
+
+          <p class="tiny-note text-center mt-4">
+            This offer includes 1 Gold Standard Whey 5 lbs + 1 extra product only.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const wheyFlavors = [
+      {
+        id: 'vanilla',
+        name: 'Vanilla Ice Cream',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25.webp?raw=true'
+      },
+      {
+        id: 'banana',
+        name: 'Banana Cream',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25%20banana.webp?raw=true'
+      },
+      {
+        id: 'chocolate',
+        name: 'Double Rich Chocolate',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25.webp?raw=true'
+      },
+      {
+        id: 'strawberry',
+        name: 'Delicious Strawberry',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25%20Surawberrv.webp?raw=true'
+      }
+    ];
+
+    const products = [
+      {
+        id: 'c4-original',
+        name: 'C4 Original',
+        subtitle: 'Pre-Workout',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/C4%20Original.webp?raw=true',
+        flavors: [
+          'Watermelon',
+          'Icy Blue Raspberry',
+          'Pink Lemonade'
+        ]
+      },
+      {
+        id: 'the-curse',
+        name: 'The Curse',
+        subtitle: 'Pre-Workout',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/The%20Curse.webp?raw=true'
+      },
+      {
+        id: 'r1-citrulline',
+        name: 'R1 Citrulline',
+        subtitle: 'Pump & Endurance Support',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1-Citrulline.webp?raw=true'
+      },
+      {
+        id: 'lipo6',
+        name: 'LIPO-6 Black Active Formula',
+        subtitle: 'Fat Burner',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/LIPO-6%20Black%20ActiveFormula.webp?raw=true'
+      },
+      {
+        id: 'xtend',
+        name: 'Xtend Original BCAA',
+        subtitle: 'Muscle Recovery',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/extend.webp?raw=true',
+        flavors: [
+          'Knockout Fruit Punch',
+          'Mango Madness',
+          'Watermelon Explosion'
+        ]
+      },
+      {
+        id: 'amino9',
+        name: 'R1 Essential Amino 9',
+        subtitle: 'Recovery & Hydration',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1%20Essential%20Amino%209.webp?raw=true'
+      },
+      {
+        id: 'collagen',
+        name: 'R1 Collagen Peptides',
+        subtitle: 'Hair, Skin, Nail & Joint Support',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1%20Collagen%20Peptides.webp?raw=true'
+      }
+    ];
+
+    let selectedWheyFlavor = null;
+    let selectedExtra = null;
+    let selectedExtraFlavor = null;
+
+    const wheyFlavorGrid = document.getElementById('wheyFlavorGrid');
+    const extraGrid = document.getElementById('extraGrid');
+    const extraFlavorSection = document.getElementById('extraFlavorSection');
+    const extraFlavorGrid = document.getElementById('extraFlavorGrid');
+    const extraFlavorTitle = document.getElementById('extraFlavorTitle');
+
+    const selectedWheyFlavorText = document.getElementById('selectedWheyFlavorText');
+    const selectedExtraText = document.getElementById('selectedExtraText');
+    const selectedExtraFlavorText = document.getElementById('selectedExtraFlavorText');
+
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const warningBox = document.getElementById('warningBox');
+    const mainProductImage = document.getElementById('mainProductImage');
+
+    const step1Dot = document.getElementById('step1Dot');
+    const step2Dot = document.getElementById('step2Dot');
+    const step3Dot = document.getElementById('step3Dot');
+
+    function renderWheyFlavors() {
+      wheyFlavorGrid.innerHTML = wheyFlavors.map(item => `
+        <button
+          type="button"
+          class="choice-card p-4 text-left ${selectedWheyFlavor === item.id ? 'selected' : ''}"
+          data-id="${item.id}">
+          <div class="image-wrap p-4 mb-4">
+            <img src="${item.image}" alt="${item.name}" class="flavor-preview">
+          </div>
+          <div class="pr-6">
+            <div class="text-[11px] font-black uppercase tracking-widest text-[#9aa1ac] mb-1">Whey Flavor</div>
+            <div class="font-black text-[#0a0b0f] leading-tight text-[16px]">${item.name}</div>
+          </div>
+        </button>
+      `).join('');
+
+      document.querySelectorAll('#wheyFlavorGrid .choice-card').forEach(card => {
+        card.addEventListener('click', () => {
+          selectedWheyFlavor = card.dataset.id;
+          const flavor = wheyFlavors.find(item => item.id === selectedWheyFlavor);
+          if (flavor) {
+            mainProductImage.src = flavor.image;
+            mainProductImage.alt = flavor.name;
+          }
+          updateUI();
+        });
+      });
+    }
+
+    function renderProducts() {
+      extraGrid.innerHTML = products.map(item => `
+        <button
+          type="button"
+          class="choice-card p-5 text-center ${selectedExtra === item.id ? 'selected' : ''}"
+          data-id="${item.id}">
+          <div class="image-wrap p-4 mb-4">
+            <img src="${item.image}" alt="${item.name}" class="extra-preview">
+          </div>
+
+          <div class="min-h-[76px]">
+            <h3 class="text-[18px] font-black text-[#0a0b0f] tracking-[-0.02em] leading-tight">${item.name}</h3>
+            <p class="text-sm font-bold text-[#7b8493] mt-1">${item.subtitle}</p>
+          </div>
+
+          <div class="mt-4">
+            ${item.flavors && item.flavors.length ? `
+              <span class="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-red-600">
+                ${item.flavors.length} Flavors
+              </span>
+            ` : `
+              <span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-slate-500">
+                Single Item
+              </span>
+            `}
+          </div>
+
+          <div class="mt-5 h-12 rounded-2xl flex items-center justify-center font-black uppercase tracking-wide text-sm ${selectedExtra === item.id ? 'bg-red-500 text-white' : 'bg-[#f1f4f7] text-[#0a0b0f]'}">
+            ${selectedExtra === item.id ? 'Selected' : 'Select'}
+          </div>
+        </button>
+      `).join('');
+
+      document.querySelectorAll('#extraGrid .choice-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const newSelected = card.dataset.id;
+
+          if (selectedExtra !== newSelected) {
+            selectedExtraFlavor = null;
+          }
+
+          selectedExtra = newSelected;
+          updateUI();
+        });
+      });
+    }
+
+    function renderExtraFlavorOptions() {
+      const extra = products.find(item => item.id === selectedExtra);
+
+      if (!extra || !extra.flavors || !extra.flavors.length) {
+        extraFlavorSection.classList.add('hidden');
+        extraFlavorGrid.innerHTML = '';
+        selectedExtraFlavorText.textContent = '—';
+        return;
+      }
+
+      extraFlavorSection.classList.remove('hidden');
+      extraFlavorTitle.textContent = `Choose ${extra.name} flavor`;
+
+      extraFlavorGrid.innerHTML = extra.flavors.map(flavor => `
+        <button
+          type="button"
+          class="option-pill ${selectedExtraFlavor === flavor ? 'selected' : ''}"
+          data-flavor="${flavor}">
+          ${flavor}
+        </button>
+      `).join('');
+
+      document.querySelectorAll('#extraFlavorGrid .option-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selectedExtraFlavor = btn.dataset.flavor;
+          updateUI();
+        });
+      });
+    }
+
+    function updateSummary() {
+      const whey = wheyFlavors.find(item => item.id === selectedWheyFlavor);
+      const extra = products.find(item => item.id === selectedExtra);
+      const extraNeedsFlavor = extra && extra.flavors && extra.flavors.length > 0;
+      const extraFlavorComplete = extraNeedsFlavor ? !!selectedExtraFlavor : true;
+
+      selectedWheyFlavorText.textContent = whey ? whey.name : 'Not selected';
+      selectedExtraText.textContent = extra ? extra.name : 'Not selected';
+      selectedExtraFlavorText.textContent = extraNeedsFlavor ? (selectedExtraFlavor || 'Not selected') : '—';
+
+      step1Dot.classList.toggle('active', !!whey);
+      step2Dot.classList.toggle('active', !!extra);
+      step3Dot.classList.toggle('active', extraNeedsFlavor ? !!selectedExtraFlavor : true);
+
+      const complete = !!whey && !!extra && extraFlavorComplete;
+
+      addToCartBtn.disabled = !complete;
+      warningBox.classList.toggle('hidden', complete);
+    }
+
+    function updateUI() {
+      renderWheyFlavors();
+      renderProducts();
+      renderExtraFlavorOptions();
+      updateSummary();
+    }
+
+    addToCartBtn.addEventListener('click', function () {
+      const whey = wheyFlavors.find(item => item.id === selectedWheyFlavor);
+      const extra = products.find(item => item.id === selectedExtra);
+      const extraNeedsFlavor = extra && extra.flavors && extra.flavors.length > 0;
+      const complete = !!whey && !!extra && (extraNeedsFlavor ? !!selectedExtraFlavor : true);
+
+      if (!complete) {
+        warningBox.classList.remove('hidden');
+        return;
+      }
+
+      alert(
+        'Offer added to cart:\\n\\n' +
+        'Main Product: Gold Standard Whey 5 lbs\\n' +
+        'Whey Flavor: ' + whey.name + '\\n' +
+        'Extra Product: ' + extra.name + '\\n' +
+        'Extra Flavor: ' + (extraNeedsFlavor ? selectedExtraFlavor : 'N/A') + '\\n' +
+        'Final Price: 100 JOD'
+      );
+    });
+
+    updateUI();
+  </script>
+</body>
+</html>
