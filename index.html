@@ -3,569 +3,1001 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gold Standard Whey Offer | First Nutrition</title>
+  <title>Gold Standard Whey Offer</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            red: { 500: '#f43131', 600: '#d82222', 700: '#b91818' }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif']
-          }
-        }
-      }
-    };
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(244,49,49,.08), transparent 24%),
-        radial-gradient(circle at 95% 10%, rgba(244,49,49,.06), transparent 16%),
-        linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
-      color: #0f172a;
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: #ffffff;
+      color: #111827;
       overflow-x: hidden;
     }
 
-    ::selection { background: #f43131; color: #fff; }
+    ::selection { background: #f43131; color: white; }
 
-    .fnx-wrap {
+    .wrap {
       width: min(1320px, 94%);
-      margin: 0 auto;
+      margin: auto;
     }
 
-    .fnx-header {
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 90;
       background: rgba(255,255,255,.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid #e9edf2;
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #edf0f4;
     }
 
-    .fnx-header-inner {
-      min-height: 78px;
-      display: grid;
-      grid-template-columns: auto 1fr auto auto;
-      gap: 24px;
+    .site-header-inner {
+      min-height: 76px;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 26px;
     }
 
-    .fnx-logo img {
-      height: 56px;
-      width: auto;
+    .logo img {
+      height: 54px;
       display: block;
     }
 
-    .fnx-nav {
+    .nav {
       display: flex;
       align-items: center;
       gap: 24px;
       flex-wrap: wrap;
     }
 
-    .fnx-nav a {
+    .nav a {
       text-decoration: none;
-      color: #5b6472;
+      color: #4b5563;
       font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      transition: .25s ease;
-      white-space: nowrap;
-    }
-
-    .fnx-nav a:hover,
-    .fnx-nav a.active {
-      color: #0a0b0f;
-    }
-
-    .fnx-search {
-      width: min(320px,100%);
-      height: 40px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0 14px 0 16px;
-      border: 1px solid #ececef;
-      background: #f7f7f8;
-      border-radius: 999px;
-    }
-
-    .fnx-search input {
-      width: 100%;
-      border: none;
-      outline: none;
-      background: transparent;
-      color: #555;
-      font-size: 14px;
-      font-family: inherit;
-    }
-
-    .fnx-search svg {
-      width: 18px;
-      height: 18px;
-      stroke: #9aa1ac;
-      stroke-width: 2;
-      fill: none;
-      flex: 0 0 auto;
-    }
-
-    .fnx-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      white-space: nowrap;
-    }
-
-    .fnx-right a {
-      text-decoration: none;
-      color: #555c67;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .panel {
-      background: rgba(255,255,255,.96);
-      border: 1px solid #e8edf3;
-      border-radius: 30px;
-      box-shadow: 0 18px 55px rgba(10,11,15,.06);
-    }
-
-    .hero-product-box {
-      min-height: 420px;
-      border-radius: 30px;
-      background:
-        radial-gradient(circle at center, rgba(244,49,49,.08), transparent 54%),
-        linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
-      border: 1px solid #ebeff4;
-    }
-
-    .main-product-image {
-      width: 100%;
-      max-width: 340px;
-      max-height: 340px;
-      object-fit: contain;
-      transition: .25s ease;
-      filter: none !important;
-      box-shadow: none !important;
-    }
-
-    .step-badge {
-      width: 46px;
-      height: 46px;
-      border-radius: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #0a0b0f;
-      color: #fff;
       font-weight: 900;
-      font-size: 16px;
-      flex: 0 0 auto;
+      text-transform: uppercase;
     }
 
-    .choice-card {
+    .nav a.active,
+    .nav a:hover {
+      color: #f43131;
+    }
+
+    .offer-page {
+      padding: 34px 0 76px;
+      background:
+        radial-gradient(circle at top left, rgba(244,49,49,.07), transparent 22%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .hero {
       position: relative;
-      border: 2px solid #e8edf3;
-      border-radius: 24px;
-      background: #fff;
-      transition: .25s ease;
-      cursor: pointer;
+      display: grid;
+      grid-template-columns: 390px 1fr;
+      gap: 38px;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid #e7ecf3;
+      border-radius: 36px;
+      padding: 34px;
+      box-shadow: 0 28px 80px rgba(18,24,39,.075);
+      margin-bottom: 22px;
       overflow: hidden;
     }
 
-    .choice-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(244,49,49,.42);
-      box-shadow: 0 16px 34px rgba(10,11,15,.07);
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(244,49,49,.10), transparent 28%),
+        linear-gradient(90deg, rgba(244,49,49,.045), transparent 42%);
+      pointer-events: none;
     }
 
-    .choice-card.selected {
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 34px;
+      bottom: 34px;
+      width: 6px;
+      border-radius: 0 999px 999px 0;
+      background: #f43131;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-img-box {
+      height: 330px;
+      border-radius: 30px;
+      background: #ffffff;
+      border: 1px solid #edf1f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img {
+      max-width: 320px;
+      max-height: 320px;
+      object-fit: contain;
+      filter: none;
+      box-shadow: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(244,49,49,.09);
+      color: #f43131;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 3.25vw, 48px);
+      line-height: 1;
+      letter-spacing: -.045em;
+      margin: 0 0 12px;
+      font-weight: 900;
+      max-width: 720px;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 22px;
+      color: #5f6876;
+      font-size: 17px;
+      line-height: 1.75;
+      max-width: 650px;
+    }
+
+    .hero-bottom {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .mini-price {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #f43131;
+      color: #fff;
+      border-radius: 20px;
+      padding: 14px 18px;
+      box-shadow: 0 16px 32px rgba(244,49,49,.18);
+    }
+
+    .mini-price span {
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: rgba(255,255,255,.72);
+    }
+
+    .mini-price strong {
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -.035em;
+    }
+
+    .mini-note {
+      color: #111827;
+      font-size: 13px;
+      font-weight: 900;
+      background: #ffffff;
+      border: 1px solid #e8edf3;
+      border-radius: 999px;
+      padding: 12px 15px;
+    }
+
+    .mini-progress {
+      background: #fff;
+      border: 1px solid #e8edf3;
+      border-radius: 24px;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 14px 36px rgba(18,24,39,.045);
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .progress-step {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: #7b8493;
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .progress-step .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      background: #edf1f5;
+      color: #7b8493;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .progress-step.active .num {
+      background: #f43131;
+      color: #fff;
+    }
+
+    .progress-step.done .num {
+      background: #22c55e;
+      color: #fff;
+    }
+
+    .progress-arrow {
+      color: #c1c8d2;
+      font-weight: 900;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid #e7ecf3;
+      border-radius: 34px;
+      padding: 28px;
+      box-shadow: 0 18px 55px rgba(18,24,39,.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel + .panel {
+      margin-top: 24px;
+    }
+
+    .panel-whey {
+      border-top: 5px solid #f43131;
+      background:
+        linear-gradient(180deg, rgba(244,49,49,.025), transparent 150px),
+        #ffffff;
+    }
+
+    .panel-extra {
+      border-top: 5px solid #111827;
+      background:
+        linear-gradient(180deg, rgba(17,24,39,.025), transparent 150px),
+        #ffffff;
+    }
+
+    .section-head {
+      margin-bottom: 22px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      line-height: 1.08;
+      margin: 0;
+      letter-spacing: -.035em;
+      font-weight: 900;
+    }
+
+    .section-note {
+      margin: 8px 0 0;
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .section-tag {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-tag.red {
+      background: rgba(244,49,49,.10);
+      color: #f43131;
+    }
+
+    .section-tag.dark {
+      background: #111827;
+      color: #ffffff;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product-card {
+      appearance: none;
+      width: 100%;
+      border: 2px solid #e6ebf2;
+      background: #fff;
+      border-radius: 28px;
+      padding: 18px;
+      text-align: left;
+      cursor: pointer;
+      transition: .22s ease;
+      position: relative;
+      overflow: hidden;
+      min-height: 378px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(244,49,49,.45);
+      box-shadow: 0 16px 36px rgba(18,24,39,.065);
+    }
+
+    .product-card.selected {
       border-color: #f43131;
-      box-shadow: 0 18px 40px rgba(244,49,49,.12);
+      background: #fff;
+      box-shadow: 0 18px 42px rgba(244,49,49,.10);
     }
 
-    .choice-card.selected::after {
+    .product-card.selected::after {
       content: "SELECTED";
       position: absolute;
       top: 14px;
       right: 14px;
       background: #f43131;
-      color: white;
-      font-size: 10px;
+      color: #fff;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 9px;
       font-weight: 900;
       letter-spacing: .08em;
-      padding: 7px 10px;
-      border-radius: 999px;
       z-index: 3;
     }
 
-    .image-wrap {
-      background: linear-gradient(180deg, #fbfbfc 0%, #f3f5f8 100%);
+    .img-box {
+      height: 205px;
+      border-radius: 24px;
+      background: #ffffff;
       border: 1px solid #edf1f5;
-      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
     }
 
-    .flavor-preview {
-      width: 100%;
-      height: 100px;
+    .item-img {
+      max-width: 100%;
+      max-height: 184px;
       object-fit: contain;
-      display: block;
-      filter: none !important;
-      box-shadow: none !important;
+      filter: none;
+      box-shadow: none;
     }
 
-    .extra-preview {
-      width: 100%;
-      height: 170px;
-      object-fit: contain;
-      display: block;
-      filter: none !important;
-      box-shadow: none !important;
+    .item-name {
+      font-size: 18px;
+      line-height: 1.18;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      color: #101827;
+      min-height: 44px;
+      padding-right: 55px;
     }
 
-    .option-pill {
+    .item-type {
+      font-size: 13px;
+      color: #7b8493;
+      font-weight: 800;
+      margin-top: 6px;
+    }
+
+    .badge {
+      width: fit-content;
+      margin-top: 12px;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      background: #f1f4f7;
+      color: #64748b;
+    }
+
+    .badge.red {
+      background: rgba(244,49,49,.10);
+      color: #f43131;
+    }
+
+    .flavor-options {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #edf1f5;
+      gap: 8px;
+      flex-direction: column;
+    }
+
+    .product-card.selected .flavor-options {
+      display: flex;
+    }
+
+    .mini-label {
+      font-size: 11px;
+      font-weight: 900;
+      color: #7b8493;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .pill-grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    .pill {
       border: 1.5px solid #dbe2ea;
       background: #fff;
-      color: #0f172a;
-      padding: 12px 16px;
-      border-radius: 16px;
-      font-weight: 800;
-      font-size: 14px;
-      transition: .22s ease;
+      color: #101827;
+      border-radius: 14px;
+      padding: 11px 12px;
+      font-size: 13px;
+      font-weight: 850;
       cursor: pointer;
+      text-align: center;
+      transition: .18s ease;
+    }
+
+    .pill:hover {
+      border-color: rgba(244,49,49,.45);
+      background: #fff5f5;
+    }
+
+    .pill.selected {
+      background: #f43131;
+      border-color: #f43131;
+      color: #fff;
+    }
+
+    .bottom-actions {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 180px minmax(260px, 640px);
+      gap: 18px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qty {
+      height: 58px;
+      border-radius: 999px;
+      border: 1px solid #e8edf3;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 50px 1fr 50px;
+      align-items: center;
+      box-shadow: 0 8px 22px rgba(18,24,39,.05);
+      overflow: hidden;
+    }
+
+    .qty button {
+      height: 100%;
+      border: 0;
+      background: transparent;
+      font-size: 20px;
+      font-weight: 900;
+      color: #8b95a5;
+      cursor: pointer;
+    }
+
+    .qty strong {
+      text-align: center;
+      font-size: 18px;
+      color: #101827;
+    }
+
+    .add-btn {
+      height: 58px;
+      border: 0;
+      border-radius: 999px;
+      background: #df352f;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      cursor: pointer;
+      box-shadow: 0 18px 38px rgba(223,53,47,.20);
+      transition: .22s ease;
+    }
+
+    .add-btn:hover {
+      background: #c92925;
+      transform: translateY(-2px);
+    }
+
+    .add-btn:disabled {
+      background: #d5dae2;
+      box-shadow: none;
+      transform: none;
+      cursor: not-allowed;
+    }
+
+    .warning {
+      display: none;
+      max-width: 640px;
+      margin: 18px auto 0;
+      background: rgba(244,49,49,.09);
+      border: 1px solid rgba(244,49,49,.18);
+      color: #d82222;
+      border-radius: 18px;
+      padding: 13px 14px;
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 800;
       text-align: center;
     }
 
-    .option-pill:hover {
-      border-color: rgba(244,49,49,.4);
-      background: #fff8f8;
+    .warning.show { display: block; }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,11,15,.55);
+      z-index: 110;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
     }
 
-    .option-pill.selected {
-      border-color: #f43131;
-      background: #f43131;
-      color: #fff;
-      box-shadow: 0 10px 28px rgba(244,49,49,.18);
+    .cart-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
     }
 
-    .summary-card {
-      position: sticky;
-      top: 98px;
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 120;
+      height: 100vh;
+      width: min(430px, 100%);
+      background: #f3f4f6;
+      transform: translateX(105%);
+      transition: .3s ease;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      box-shadow: -24px 0 70px rgba(0,0,0,.22);
     }
 
-    .summary-row {
+    .cart-drawer.show {
+      transform: translateX(0);
+    }
+
+    .cart-head {
+      height: 86px;
+      padding: 0 26px;
+      background: #f6f7f9;
+      border-bottom: 1px solid #e3e7ee;
       display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid #edf1f5;
     }
 
-    .summary-row:last-child {
-      border-bottom: 0;
+    .cart-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 900;
+      color: #1f2937;
     }
 
-    .status-dot {
-      width: 10px;
-      height: 10px;
+    .cart-count {
+      background: rgba(244,49,49,.1);
+      color: #f43131;
       border-radius: 999px;
-      background: #d1d5db;
-      flex: 0 0 auto;
-    }
-
-    .status-dot.active {
-      background: #22c55e;
-      box-shadow: 0 0 0 6px rgba(34,197,94,.12);
-    }
-
-    .tiny-note {
+      padding: 7px 10px;
       font-size: 12px;
-      line-height: 1.7;
-      color: #6b7280;
+      font-weight: 900;
+      text-transform: uppercase;
     }
 
-    @media(max-width:1180px) {
-      .fnx-header-inner {
-        grid-template-columns: 1fr;
-        gap: 14px;
+    .close-cart {
+      border: 0;
+      background: transparent;
+      color: #64748b;
+      font-size: 30px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .cart-body {
+      overflow-y: auto;
+      padding: 24px 26px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .cart-img {
+      width: 88px;
+      height: 88px;
+      border-radius: 8px;
+      background: #fff;
+      object-fit: contain;
+    }
+
+    .cart-item-title {
+      font-size: 15px;
+      line-height: 1.25;
+      font-weight: 900;
+      color: #1f2937;
+      margin-bottom: 3px;
+    }
+
+    .cart-brand {
+      color: #a0a7b4;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .cart-options {
+      color: #697386;
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .cart-options strong {
+      color: #1f2937;
+      font-weight: 900;
+    }
+
+    .cart-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .cart-price {
+      color: #f43131;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .cart-qty {
+      height: 26px;
+      min-width: 76px;
+      border-radius: 999px;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 22px 1fr 22px;
+      align-items: center;
+      overflow: hidden;
+      color: #1f2937;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .cart-qty button {
+      border: 0;
+      background: transparent;
+      color: #94a3b8;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .trash {
+      border: 0;
+      background: transparent;
+      color: #cbd5e1;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .cart-foot {
+      background: #fff;
+      border-top: 1px solid #e4e8ef;
+      padding: 26px;
+    }
+
+    .subtotal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      color: #667085;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .subtotal strong {
+      color: #1f2937;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .checkout {
+      width: 100%;
+      height: 58px;
+      border: 0;
+      border-radius: 999px;
+      background: #df352f;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 16px 35px rgba(223,53,47,.22);
+    }
+
+    .continue {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: #9aa3b2;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding-top: 22px;
+      cursor: pointer;
+    }
+
+    @media(max-width: 1150px) {
+      .hero {
+        grid-template-columns: 330px 1fr;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 760px) {
+      .site-header-inner {
+        flex-direction: column;
+        align-items: flex-start;
         padding: 14px 0;
       }
 
-      .fnx-search { width: 100%; }
-    }
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
 
-    @media(max-width:1024px) {
-      .summary-card { position: static; }
-    }
+      .hero-img-box {
+        height: 300px;
+      }
 
-    @media(max-width:640px) {
-      .extra-preview { height: 140px; }
-      .hero-product-box { min-height: 320px; }
-      .main-product-image { max-width: 250px; max-height: 250px; }
-      .flavor-preview { height: 82px; }
+      .hero-img {
+        max-width: 280px;
+        max-height: 280px;
+      }
+
+      .mini-progress {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-tag {
+        display: inline-flex;
+        margin-top: 12px;
+      }
+
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .img-box {
+        height: 220px;
+      }
+
+      .item-img {
+        max-height: 195px;
+      }
+
+      .bottom-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .qty,
+      .add-btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header class="fnx-header">
-    <div class="fnx-wrap">
-      <div class="fnx-header-inner">
-        <a href="#" class="fnx-logo">
+  <header class="site-header">
+    <div class="wrap">
+      <div class="site-header-inner">
+        <a href="#" class="logo">
           <img src="https://www.firstnutrition.com/wp-content/uploads/2026/05/firstnutritionjo-logo.webp" alt="First Nutrition">
         </a>
 
-        <nav class="fnx-nav">
-          <a href="#">SHOP</a>
-          <a href="#">CATEGORIES</a>
-          <a href="#" class="active">HOT OFFERS</a>
-          <a href="#">OUR BRANDS</a>
-          <a href="#">ABOUT US</a>
-          <a href="#">MORE+</a>
+        <nav class="nav">
+          <a href="#">Shop</a>
+          <a href="#">Categories</a>
+          <a href="#" class="active">Hot Offers</a>
+          <a href="#">Our Brands</a>
+          <a href="#">More+</a>
         </nav>
-
-        <div class="fnx-search">
-          <input type="text" placeholder="Search...">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-        </div>
-
-        <div class="fnx-right">
-          <a href="#">LOGIN / REGISTER</a>
-          <a href="#">العربية</a>
-        </div>
       </div>
     </div>
   </header>
 
-  <main class="py-8 lg:py-12">
-    <div class="fnx-wrap">
-      <div class="grid lg:grid-cols-[1fr_390px] gap-8 xl:gap-10 items-start">
-
-        <div class="space-y-8">
-          <!-- HERO -->
-          <section class="panel p-6 lg:p-8">
-            <div class="grid lg:grid-cols-[420px_1fr] gap-8 items-center">
-              <div class="hero-product-box flex items-center justify-center p-6">
-                <img
-                  id="mainProductImage"
-                  class="main-product-image"
-                  src="https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25.webp?raw=true"
-                  alt="Gold Standard 100% Whey"
-                >
-              </div>
-
-              <div>
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 text-red-600 text-[11px] font-black uppercase tracking-[.18em] mb-5">
-                  Combo Offer
-                </div>
-
-                <h1 class="text-[34px] lg:text-[52px] font-black tracking-[-0.045em] leading-[0.96] text-[#0a0b0f] mb-4">
-                  Gold Standard 100% Whey Offer
-                </h1>
-
-                <p class="text-[17px] text-[#5b6472] leading-8 max-w-2xl mb-6">
-                  Pick your whey flavor, choose one extra product, and if that product has flavors, choose its flavor too.
-                </p>
-
-                <div class="flex flex-wrap gap-3 mb-7">
-                  <div class="px-5 py-3 rounded-2xl bg-[#0a0b0f] text-white">
-                    <div class="text-[11px] font-black uppercase tracking-widest text-white/60">Main Product</div>
-                    <div class="text-sm font-black">Gold Standard Whey 5 lbs</div>
-                  </div>
-
-                  <div class="px-5 py-3 rounded-2xl bg-red-500 text-white">
-                    <div class="text-[11px] font-black uppercase tracking-widest text-white/70">Final Price</div>
-                    <div class="text-sm font-black">100 JOD</div>
-                  </div>
-                </div>
-
-                <div class="grid sm:grid-cols-3 gap-4">
-                  <div class="flex items-center gap-3 p-4 rounded-2xl bg-[#f8fafc] border border-[#e8edf3]">
-                    <span class="step-badge">1</span>
-                    <div>
-                      <div class="font-black text-[#0a0b0f]">Whey Flavor</div>
-                      <div class="text-sm text-[#6b7280]">Choose 1</div>
-                    </div>
-                  </div>
-
-                  <div class="flex items-center gap-3 p-4 rounded-2xl bg-[#f8fafc] border border-[#e8edf3]">
-                    <span class="step-badge">2</span>
-                    <div>
-                      <div class="font-black text-[#0a0b0f]">Extra Product</div>
-                      <div class="text-sm text-[#6b7280]">Choose 1</div>
-                    </div>
-                  </div>
-
-                  <div class="flex items-center gap-3 p-4 rounded-2xl bg-[#f8fafc] border border-[#e8edf3]">
-                    <span class="step-badge">3</span>
-                    <div>
-                      <div class="font-black text-[#0a0b0f]">Extra Flavor</div>
-                      <div class="text-sm text-[#6b7280]">If needed</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- STEP 1 -->
-          <section class="panel p-6 lg:p-8">
-            <div class="flex items-start gap-4 mb-7">
-              <span class="step-badge">1</span>
-              <div>
-                <h2 class="text-2xl lg:text-3xl font-black tracking-[-0.03em] text-[#0a0b0f]">Choose your whey flavor</h2>
-                <p class="text-[#6b7280] mt-1">Select one flavor for Gold Standard 100% Whey 5 lbs.</p>
-              </div>
-            </div>
-
-            <div id="wheyFlavorGrid" class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4"></div>
-          </section>
-
-          <!-- STEP 2 -->
-          <section class="panel p-6 lg:p-8">
-            <div class="flex items-start gap-4 mb-7">
-              <span class="step-badge">2</span>
-              <div>
-                <h2 class="text-2xl lg:text-3xl font-black tracking-[-0.03em] text-[#0a0b0f]">Choose one extra product</h2>
-                <p class="text-[#6b7280] mt-1">Pick one product to complete your offer.</p>
-              </div>
-            </div>
-
-            <div id="extraGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5"></div>
-          </section>
-
-          <!-- STEP 3 -->
-          <section id="extraFlavorSection" class="panel p-6 lg:p-8 hidden">
-            <div class="flex items-start gap-4 mb-7">
-              <span class="step-badge">3</span>
-              <div>
-                <h2 id="extraFlavorTitle" class="text-2xl lg:text-3xl font-black tracking-[-0.03em] text-[#0a0b0f]">Choose flavor</h2>
-                <p class="text-[#6b7280] mt-1">This product has multiple flavors. Choose one flavor.</p>
-              </div>
-            </div>
-
-            <div id="extraFlavorGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4"></div>
-          </section>
+  <main class="offer-page">
+    <div class="wrap">
+      <section class="hero">
+        <div class="hero-img-box">
+          <img id="mainProductImage" class="hero-img" src="https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25.webp?raw=true" alt="Gold Standard Whey">
         </div>
 
-        <!-- SUMMARY -->
-        <aside class="summary-card panel p-6 lg:p-7">
-          <div class="mb-6">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 text-red-600 text-[11px] font-black uppercase tracking-[.18em] mb-4">
-              Offer Summary
-            </div>
+        <div>
+          <div class="eyebrow">Premium Combo Offer</div>
 
-            <h3 class="text-2xl font-black tracking-[-0.03em] text-[#0a0b0f]">
-              Your Combo
-            </h3>
+          <h1>Gold Standard Whey 5 lbs Combo</h1>
 
-            <p class="text-sm text-[#6b7280] mt-2">
-              Clear summary before adding to cart.
-            </p>
-          </div>
-
-          <div class="rounded-[28px] bg-[#f8fafc] border border-[#e8edf3] p-5 mb-5">
-            <div class="summary-row">
-              <span class="text-sm font-bold text-[#6b7280]">Main Product</span>
-              <strong class="text-sm text-right text-[#0a0b0f]">Gold Standard Whey 5 lbs</strong>
-            </div>
-
-            <div class="summary-row">
-              <span class="text-sm font-bold text-[#6b7280]">Whey Flavor</span>
-              <strong id="selectedWheyFlavorText" class="text-sm text-right text-[#0a0b0f]">Not selected</strong>
-            </div>
-
-            <div class="summary-row">
-              <span class="text-sm font-bold text-[#6b7280]">Extra Product</span>
-              <strong id="selectedExtraText" class="text-sm text-right text-[#0a0b0f]">Not selected</strong>
-            </div>
-
-            <div class="summary-row">
-              <span class="text-sm font-bold text-[#6b7280]">Extra Flavor</span>
-              <strong id="selectedExtraFlavorText" class="text-sm text-right text-[#0a0b0f]">—</strong>
-            </div>
-
-            <div class="summary-row">
-              <span class="text-sm font-bold text-[#6b7280]">Final Price</span>
-              <strong class="text-[28px] leading-none text-red-600 font-black">100 JOD</strong>
-            </div>
-          </div>
-
-          <div class="space-y-3 mb-5">
-            <div class="flex items-center gap-3 p-4 rounded-2xl border border-[#e8edf3] bg-white">
-              <span id="step1Dot" class="status-dot"></span>
-              <div>
-                <div class="font-black text-sm text-[#0a0b0f]">Whey flavor selected</div>
-                <div class="tiny-note">Choose one whey flavor</div>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-4 rounded-2xl border border-[#e8edf3] bg-white">
-              <span id="step2Dot" class="status-dot"></span>
-              <div>
-                <div class="font-black text-sm text-[#0a0b0f]">Extra product selected</div>
-                <div class="tiny-note">Choose one extra product</div>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-4 rounded-2xl border border-[#e8edf3] bg-white">
-              <span id="step3Dot" class="status-dot"></span>
-              <div>
-                <div class="font-black text-sm text-[#0a0b0f]">Extra flavor selected</div>
-                <div class="tiny-note">Only required for products with flavors</div>
-              </div>
-            </div>
-          </div>
-
-          <div id="warningBox" class="hidden mb-4 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-600 p-4 text-sm font-bold">
-            Please complete all required selections.
-          </div>
-
-          <button
-            id="addToCartBtn"
-            class="w-full h-14 rounded-2xl bg-[#0a0b0f] text-white font-black uppercase tracking-wide transition hover:bg-red-500 disabled:bg-[#d5dae2] disabled:text-white disabled:cursor-not-allowed"
-            disabled
-          >
-            Add To Cart
-          </button>
-
-          <p class="tiny-note text-center mt-4">
-            This offer includes 1 Gold Standard Whey 5 lbs + 1 extra product only.
+          <p class="hero-subtitle">
+            Choose 1 whey flavor + 1 extra product to complete your 100 JOD offer.
           </p>
-        </aside>
+
+          <div class="hero-bottom">
+            <div class="mini-price">
+              <span>Final Price</span>
+              <strong>100 JOD</strong>
+            </div>
+
+            <div class="mini-note">1 Whey + 1 Extra Product</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="mini-progress">
+        <div id="progress1" class="progress-step active">
+          <span class="num">1</span>
+          <span>Choose Whey Flavor</span>
+        </div>
+
+        <span class="progress-arrow">→</span>
+
+        <div id="progress2" class="progress-step">
+          <span class="num">2</span>
+          <span>Choose Extra Product</span>
+        </div>
+
+        <span class="progress-arrow">→</span>
+
+        <div id="progress3" class="progress-step">
+          <span class="num">3</span>
+          <span>Add To Cart</span>
+        </div>
       </div>
+
+      <section class="panel panel-whey">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">1. Choose your whey flavor</h2>
+            <p class="section-note">Select one flavor from the available Gold Standard 100% Whey 5 lbs options.</p>
+          </div>
+
+          <div class="section-tag red">Main Product</div>
+        </div>
+
+        <div id="wheyGrid" class="grid-4"></div>
+      </section>
+
+      <section class="panel panel-extra">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">2. Choose one extra product</h2>
+            <p class="section-note">C4 and Xtend appear first because they have flavor options.</p>
+          </div>
+
+          <div class="section-tag dark">Extra Product</div>
+        </div>
+
+        <div id="productsGrid" class="grid-4"></div>
+
+        <div id="warning" class="warning">
+          Please choose a whey flavor and one extra product before adding to cart.
+        </div>
+
+        <div class="bottom-actions">
+          <div class="qty">
+            <button id="minusBtn" type="button">-</button>
+            <strong id="qtyText">1</strong>
+            <button id="plusBtn" type="button">+</button>
+          </div>
+
+          <button id="addBtn" class="add-btn" type="button" disabled>
+            ADD TO CART →
+          </button>
+        </div>
+      </section>
     </div>
   </main>
+
+  <div id="cartOverlay" class="cart-overlay"></div>
+
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-head">
+      <div class="cart-title">
+        🛍️ Your Cart <span id="cartCount" class="cart-count">0 ITEMS</span>
+      </div>
+      <button id="closeCart" class="close-cart" type="button">×</button>
+    </div>
+
+    <div id="cartBody" class="cart-body"></div>
+
+    <div class="cart-foot">
+      <div class="subtotal">
+        <span>Subtotal</span>
+        <strong id="subtotalText">0 JOD</strong>
+      </div>
+
+      <button class="checkout" type="button">CHECKOUT NOW</button>
+      <button id="continueBtn" class="continue" type="button">CONTINUE SHOPPING</button>
+    </div>
+  </aside>
 
   <script>
     const wheyFlavors = [
       {
+        id: 'chocolate',
+        name: 'Double Rich Chocolate',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25.webp?raw=true'
+      },
+      {
         id: 'vanilla',
         name: 'Vanilla Ice Cream',
-        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25.webp?raw=true'
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25%20Vanilla%20Ice%20.webp?raw=true'
       },
       {
         id: 'banana',
         name: 'Banana Cream',
         image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25%20banana.webp?raw=true'
-      },
-      {
-        id: 'chocolate',
-        name: 'Double Rich Chocolate',
-        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25.webp?raw=true'
       },
       {
         id: 'strawberry',
@@ -576,236 +1008,295 @@
 
     const products = [
       {
-        id: 'c4-original',
+        id: 'c4',
         name: 'C4 Original',
-        subtitle: 'Pre-Workout',
+        type: 'Pre-Workout',
         image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/C4%20Original.webp?raw=true',
-        flavors: [
-          'Watermelon',
-          'Icy Blue Raspberry',
-          'Pink Lemonade'
-        ]
-      },
-      {
-        id: 'the-curse',
-        name: 'The Curse',
-        subtitle: 'Pre-Workout',
-        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/The%20Curse.webp?raw=true'
-      },
-      {
-        id: 'r1-citrulline',
-        name: 'R1 Citrulline',
-        subtitle: 'Pump & Endurance Support',
-        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1-Citrulline.webp?raw=true'
-      },
-      {
-        id: 'lipo6',
-        name: 'LIPO-6 Black Active Formula',
-        subtitle: 'Fat Burner',
-        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/LIPO-6%20Black%20ActiveFormula.webp?raw=true'
+        flavors: ['Watermelon', 'Icy Blue Raspberry', 'Pink Lemonade']
       },
       {
         id: 'xtend',
         name: 'Xtend Original BCAA',
-        subtitle: 'Muscle Recovery',
+        type: 'Recovery',
         image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/extend.webp?raw=true',
-        flavors: [
-          'Knockout Fruit Punch',
-          'Mango Madness',
-          'Watermelon Explosion'
-        ]
+        flavors: ['Knockout Fruit Punch', 'Mango Madness', 'Watermelon Explosion']
+      },
+      {
+        id: 'curse',
+        name: 'The Curse',
+        type: 'Pre-Workout',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/The%20Curse.webp?raw=true',
+        flavors: []
+      },
+      {
+        id: 'citrulline',
+        name: 'R1 Citrulline',
+        type: 'Pump Support',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1-Citrulline.webp?raw=true',
+        flavors: []
+      },
+      {
+        id: 'lipo6',
+        name: 'LIPO-6 Black Active Formula',
+        type: 'Fat Burner',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/LIPO-6%20Black%20ActiveFormula.webp?raw=true',
+        flavors: []
       },
       {
         id: 'amino9',
         name: 'R1 Essential Amino 9',
-        subtitle: 'Recovery & Hydration',
-        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1%20Essential%20Amino%209.webp?raw=true'
+        type: 'Amino Acids',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1%20Essential%20Amino%209.webp?raw=true',
+        flavors: []
       },
       {
         id: 'collagen',
         name: 'R1 Collagen Peptides',
-        subtitle: 'Hair, Skin, Nail & Joint Support',
-        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1%20Collagen%20Peptides.webp?raw=true'
+        type: 'Collagen',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1%20Collagen%20Peptides.webp?raw=true',
+        flavors: []
       }
     ];
 
-    let selectedWheyFlavor = null;
+    let selectedWhey = null;
     let selectedExtra = null;
     let selectedExtraFlavor = null;
+    let qty = 1;
+    let cartItems = [];
 
-    const wheyFlavorGrid = document.getElementById('wheyFlavorGrid');
-    const extraGrid = document.getElementById('extraGrid');
-    const extraFlavorSection = document.getElementById('extraFlavorSection');
-    const extraFlavorGrid = document.getElementById('extraFlavorGrid');
-    const extraFlavorTitle = document.getElementById('extraFlavorTitle');
-
-    const selectedWheyFlavorText = document.getElementById('selectedWheyFlavorText');
-    const selectedExtraText = document.getElementById('selectedExtraText');
-    const selectedExtraFlavorText = document.getElementById('selectedExtraFlavorText');
-
-    const addToCartBtn = document.getElementById('addToCartBtn');
-    const warningBox = document.getElementById('warningBox');
+    const wheyGrid = document.getElementById('wheyGrid');
+    const productsGrid = document.getElementById('productsGrid');
     const mainProductImage = document.getElementById('mainProductImage');
+    const addBtn = document.getElementById('addBtn');
+    const warning = document.getElementById('warning');
+    const qtyText = document.getElementById('qtyText');
 
-    const step1Dot = document.getElementById('step1Dot');
-    const step2Dot = document.getElementById('step2Dot');
-    const step3Dot = document.getElementById('step3Dot');
+    const progress1 = document.getElementById('progress1');
+    const progress2 = document.getElementById('progress2');
+    const progress3 = document.getElementById('progress3');
 
-    function renderWheyFlavors() {
-      wheyFlavorGrid.innerHTML = wheyFlavors.map(item => `
-        <button
-          type="button"
-          class="choice-card p-4 text-left ${selectedWheyFlavor === item.id ? 'selected' : ''}"
-          data-id="${item.id}">
-          <div class="image-wrap p-4 mb-4">
-            <img src="${item.image}" alt="${item.name}" class="flavor-preview">
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartBody = document.getElementById('cartBody');
+    const cartCount = document.getElementById('cartCount');
+    const subtotalText = document.getElementById('subtotalText');
+
+    function renderWhey() {
+      wheyGrid.innerHTML = wheyFlavors.map(item => `
+        <button class="product-card ${selectedWhey === item.id ? 'selected' : ''}" data-id="${item.id}" type="button">
+          <div class="img-box">
+            <img class="item-img" src="${item.image}" alt="${item.name}">
           </div>
-          <div class="pr-6">
-            <div class="text-[11px] font-black uppercase tracking-widest text-[#9aa1ac] mb-1">Whey Flavor</div>
-            <div class="font-black text-[#0a0b0f] leading-tight text-[16px]">${item.name}</div>
-          </div>
+          <div class="item-name">${item.name}</div>
+          <div class="item-type">Gold Standard Whey 5 lbs</div>
         </button>
       `).join('');
 
-      document.querySelectorAll('#wheyFlavorGrid .choice-card').forEach(card => {
+      document.querySelectorAll('#wheyGrid .product-card').forEach(card => {
         card.addEventListener('click', () => {
-          selectedWheyFlavor = card.dataset.id;
-          const flavor = wheyFlavors.find(item => item.id === selectedWheyFlavor);
-          if (flavor) {
-            mainProductImage.src = flavor.image;
-            mainProductImage.alt = flavor.name;
+          selectedWhey = card.dataset.id;
+          const whey = wheyFlavors.find(x => x.id === selectedWhey);
+          if (whey) {
+            mainProductImage.src = whey.image;
+            mainProductImage.alt = whey.name;
           }
-          updateUI();
+          update();
         });
       });
     }
 
     function renderProducts() {
-      extraGrid.innerHTML = products.map(item => `
-        <button
-          type="button"
-          class="choice-card p-5 text-center ${selectedExtra === item.id ? 'selected' : ''}"
-          data-id="${item.id}">
-          <div class="image-wrap p-4 mb-4">
-            <img src="${item.image}" alt="${item.name}" class="extra-preview">
-          </div>
+      productsGrid.innerHTML = products.map(item => {
+        const isSelected = selectedExtra === item.id;
+        const hasFlavors = item.flavors.length > 0;
 
-          <div class="min-h-[76px]">
-            <h3 class="text-[18px] font-black text-[#0a0b0f] tracking-[-0.02em] leading-tight">${item.name}</h3>
-            <p class="text-sm font-bold text-[#7b8493] mt-1">${item.subtitle}</p>
-          </div>
+        return `
+          <button class="product-card ${isSelected ? 'selected' : ''}" data-id="${item.id}" type="button">
+            <div class="img-box">
+              <img class="item-img" src="${item.image}" alt="${item.name}">
+            </div>
 
-          <div class="mt-4">
-            ${item.flavors && item.flavors.length ? `
-              <span class="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-red-600">
-                ${item.flavors.length} Flavors
-              </span>
-            ` : `
-              <span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-slate-500">
-                Single Item
-              </span>
-            `}
-          </div>
+            <div class="item-name">${item.name}</div>
+            <div class="item-type">${item.type}</div>
 
-          <div class="mt-5 h-12 rounded-2xl flex items-center justify-center font-black uppercase tracking-wide text-sm ${selectedExtra === item.id ? 'bg-red-500 text-white' : 'bg-[#f1f4f7] text-[#0a0b0f]'}">
-            ${selectedExtra === item.id ? 'Selected' : 'Select'}
-          </div>
-        </button>
-      `).join('');
+            <div class="badge ${hasFlavors ? 'red' : ''}">
+              ${hasFlavors ? 'Choose Flavor' : 'Single Item'}
+            </div>
 
-      document.querySelectorAll('#extraGrid .choice-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const newSelected = card.dataset.id;
+            ${hasFlavors ? `
+              <div class="flavor-options">
+                <div class="mini-label">Available Flavors</div>
+                <div class="pill-grid">
+                  ${item.flavors.map(flavor => `
+                    <div class="pill ${selectedExtraFlavor === flavor && isSelected ? 'selected' : ''}" data-parent="${item.id}" data-flavor="${flavor}">
+                      ${flavor}
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </button>
+        `;
+      }).join('');
 
-          if (selectedExtra !== newSelected) {
+      document.querySelectorAll('#productsGrid .product-card').forEach(card => {
+        card.addEventListener('click', e => {
+          const pill = e.target.closest('.pill');
+
+          if (pill) {
+            selectedExtra = pill.dataset.parent;
+            selectedExtraFlavor = pill.dataset.flavor;
+            update();
+            return;
+          }
+
+          const productId = card.dataset.id;
+          const product = products.find(x => x.id === productId);
+
+          if (selectedExtra !== productId) {
             selectedExtraFlavor = null;
           }
 
-          selectedExtra = newSelected;
-          updateUI();
+          selectedExtra = productId;
+
+          if (!product.flavors.length) {
+            selectedExtraFlavor = null;
+          }
+
+          update();
         });
       });
     }
 
-    function renderExtraFlavorOptions() {
-      const extra = products.find(item => item.id === selectedExtra);
-
-      if (!extra || !extra.flavors || !extra.flavors.length) {
-        extraFlavorSection.classList.add('hidden');
-        extraFlavorGrid.innerHTML = '';
-        selectedExtraFlavorText.textContent = '—';
-        return;
-      }
-
-      extraFlavorSection.classList.remove('hidden');
-      extraFlavorTitle.textContent = `Choose ${extra.name} flavor`;
-
-      extraFlavorGrid.innerHTML = extra.flavors.map(flavor => `
-        <button
-          type="button"
-          class="option-pill ${selectedExtraFlavor === flavor ? 'selected' : ''}"
-          data-flavor="${flavor}">
-          ${flavor}
-        </button>
-      `).join('');
-
-      document.querySelectorAll('#extraFlavorGrid .option-pill').forEach(btn => {
-        btn.addEventListener('click', () => {
-          selectedExtraFlavor = btn.dataset.flavor;
-          updateUI();
-        });
-      });
+    function isComplete() {
+      const extra = products.find(x => x.id === selectedExtra);
+      const needsFlavor = extra && extra.flavors.length > 0;
+      return Boolean(selectedWhey && selectedExtra && (!needsFlavor || selectedExtraFlavor));
     }
 
-    function updateSummary() {
-      const whey = wheyFlavors.find(item => item.id === selectedWheyFlavor);
-      const extra = products.find(item => item.id === selectedExtra);
-      const extraNeedsFlavor = extra && extra.flavors && extra.flavors.length > 0;
-      const extraFlavorComplete = extraNeedsFlavor ? !!selectedExtraFlavor : true;
+    function updateProgress() {
+      const complete = isComplete();
 
-      selectedWheyFlavorText.textContent = whey ? whey.name : 'Not selected';
-      selectedExtraText.textContent = extra ? extra.name : 'Not selected';
-      selectedExtraFlavorText.textContent = extraNeedsFlavor ? (selectedExtraFlavor || 'Not selected') : '—';
-
-      step1Dot.classList.toggle('active', !!whey);
-      step2Dot.classList.toggle('active', !!extra);
-      step3Dot.classList.toggle('active', extraNeedsFlavor ? !!selectedExtraFlavor : true);
-
-      const complete = !!whey && !!extra && extraFlavorComplete;
-
-      addToCartBtn.disabled = !complete;
-      warningBox.classList.toggle('hidden', complete);
+      progress1.className = 'progress-step ' + (selectedWhey ? 'done' : 'active');
+      progress2.className = 'progress-step ' + (!selectedWhey ? '' : selectedExtra ? 'done' : 'active');
+      progress3.className = 'progress-step ' + (complete ? 'done' : '');
     }
 
-    function updateUI() {
-      renderWheyFlavors();
+    function update() {
+      renderWhey();
       renderProducts();
-      renderExtraFlavorOptions();
-      updateSummary();
+
+      addBtn.disabled = !isComplete();
+      warning.classList.toggle('show', !isComplete());
+      qtyText.textContent = qty;
+      updateProgress();
     }
 
-    addToCartBtn.addEventListener('click', function () {
-      const whey = wheyFlavors.find(item => item.id === selectedWheyFlavor);
-      const extra = products.find(item => item.id === selectedExtra);
-      const extraNeedsFlavor = extra && extra.flavors && extra.flavors.length > 0;
-      const complete = !!whey && !!extra && (extraNeedsFlavor ? !!selectedExtraFlavor : true);
+    function openCart() {
+      cartOverlay.classList.add('show');
+      cartDrawer.classList.add('show');
+    }
 
-      if (!complete) {
-        warningBox.classList.remove('hidden');
+    function closeCart() {
+      cartOverlay.classList.remove('show');
+      cartDrawer.classList.remove('show');
+    }
+
+    function addToCart() {
+      if (!isComplete()) {
+        warning.classList.add('show');
         return;
       }
 
-      alert(
-        'Offer added to cart:\\n\\n' +
-        'Main Product: Gold Standard Whey 5 lbs\\n' +
-        'Whey Flavor: ' + whey.name + '\\n' +
-        'Extra Product: ' + extra.name + '\\n' +
-        'Extra Flavor: ' + (extraNeedsFlavor ? selectedExtraFlavor : 'N/A') + '\\n' +
-        'Final Price: 100 JOD'
-      );
+      const whey = wheyFlavors.find(x => x.id === selectedWhey);
+      const extra = products.find(x => x.id === selectedExtra);
+
+      cartItems.push({
+        id: Date.now(),
+        title: 'Gold Standard 100% Whey Offer 100JD',
+        brand: 'FIRST NUTRITION',
+        image: whey.image,
+        wheyFlavor: whey.name,
+        extraProduct: extra.name,
+        extraType: extra.type,
+        extraFlavor: selectedExtraFlavor || '',
+        qty: qty,
+        price: 100
+      });
+
+      renderCart();
+      openCart();
+    }
+
+    function renderCart() {
+      const totalQty = cartItems.reduce((sum, item) => sum + item.qty, 0);
+      const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+      cartCount.textContent = totalQty + (totalQty === 1 ? ' ITEM' : ' ITEMS');
+      subtotalText.textContent = subtotal + ' JOD';
+
+      cartBody.innerHTML = cartItems.map(item => `
+        <div class="cart-item">
+          <img class="cart-img" src="${item.image}" alt="${item.title}">
+
+          <div>
+            <div class="cart-item-title">${item.title}</div>
+            <div class="cart-brand">${item.brand}</div>
+
+            <div class="cart-options">
+              <strong>Gold standard 100% Whey:</strong> Gold Standard 100% Whey 5 lbs., ${item.wheyFlavor}<br>
+              <strong>Extra Product:</strong> ${item.extraProduct}${item.extraFlavor ? ' (' + item.extraType + ', ' + item.extraFlavor + ')' : ' (' + item.extraType + ')'}
+            </div>
+
+            <div class="cart-line">
+              <div class="cart-price">${item.price} JOD</div>
+
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div class="cart-qty">
+                  <button type="button" onclick="changeItemQty(${item.id}, -1)">-</button>
+                  <span>${item.qty}</span>
+                  <button type="button" onclick="changeItemQty(${item.id}, 1)">+</button>
+                </div>
+
+                <button class="trash" type="button" onclick="removeItem(${item.id})">🗑</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function changeItemQty(id, change) {
+      const item = cartItems.find(x => x.id === id);
+      if (!item) return;
+
+      item.qty += change;
+      if (item.qty < 1) item.qty = 1;
+
+      renderCart();
+    }
+
+    function removeItem(id) {
+      cartItems = cartItems.filter(x => x.id !== id);
+      renderCart();
+    }
+
+    document.getElementById('minusBtn').addEventListener('click', () => {
+      qty = Math.max(1, qty - 1);
+      qtyText.textContent = qty;
     });
 
-    updateUI();
+    document.getElementById('plusBtn').addEventListener('click', () => {
+      qty += 1;
+      qtyText.textContent = qty;
+    });
+
+    addBtn.addEventListener('click', addToCart);
+    document.getElementById('closeCart').addEventListener('click', closeCart);
+    document.getElementById('continueBtn').addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+
+    update();
   </script>
 </body>
 </html>
