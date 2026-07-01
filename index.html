@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gold Standard Whey Offer</title>
+  <script>
+    const isMobile = window.innerWidth <= 768;
+
+    const desktopHTML = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gold Standard Whey Offer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -788,63 +797,6 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
-
-    @media(max-width: 760px) {
-      .site-header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 14px 0;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 22px;
-      }
-
-      .hero-img-box {
-        height: 300px;
-      }
-
-      .hero-img {
-        max-width: 280px;
-        max-height: 280px;
-      }
-
-      .mini-progress {
-        width: 100%;
-        overflow-x: auto;
-      }
-
-      .section-head {
-        display: block;
-      }
-
-      .section-tag {
-        display: inline-flex;
-        margin-top: 12px;
-      }
-
-      .grid-4 {
-        grid-template-columns: 1fr;
-      }
-
-      .img-box {
-        height: 220px;
-      }
-
-      .item-img {
-        max-height: 195px;
-      }
-
-      .bottom-actions {
-        grid-template-columns: 1fr;
-      }
-
-      .qty,
-      .add-btn {
-        width: 100%;
-      }
-    }
   </style>
 </head>
 
@@ -1082,15 +1034,15 @@
     const subtotalText = document.getElementById('subtotalText');
 
     function renderWhey() {
-      wheyGrid.innerHTML = wheyFlavors.map(item => `
-        <button class="product-card ${selectedWhey === item.id ? 'selected' : ''}" data-id="${item.id}" type="button">
+      wheyGrid.innerHTML = wheyFlavors.map(item => \`
+        <button class="product-card \${selectedWhey === item.id ? 'selected' : ''}" data-id="\${item.id}" type="button">
           <div class="img-box">
-            <img class="item-img" src="${item.image}" alt="${item.name}">
+            <img class="item-img" src="\${item.image}" alt="\${item.name}">
           </div>
-          <div class="item-name">${item.name}</div>
+          <div class="item-name">\${item.name}</div>
           <div class="item-type">Gold Standard Whey 5 lbs</div>
         </button>
-      `).join('');
+      \`).join('');
 
       document.querySelectorAll('#wheyGrid .product-card').forEach(card => {
         card.addEventListener('click', () => {
@@ -1110,33 +1062,33 @@
         const isSelected = selectedExtra === item.id;
         const hasFlavors = item.flavors.length > 0;
 
-        return `
-          <button class="product-card ${isSelected ? 'selected' : ''}" data-id="${item.id}" type="button">
+        return \`
+          <button class="product-card \${isSelected ? 'selected' : ''}" data-id="\${item.id}" type="button">
             <div class="img-box">
-              <img class="item-img" src="${item.image}" alt="${item.name}">
+              <img class="item-img" src="\${item.image}" alt="\${item.name}">
             </div>
 
-            <div class="item-name">${item.name}</div>
-            <div class="item-type">${item.type}</div>
+            <div class="item-name">\${item.name}</div>
+            <div class="item-type">\${item.type}</div>
 
-            <div class="badge ${hasFlavors ? 'red' : ''}">
-              ${hasFlavors ? 'Choose Flavor' : 'Single Item'}
+            <div class="badge \${hasFlavors ? 'red' : ''}">
+              \${hasFlavors ? 'Choose Flavor' : 'Single Item'}
             </div>
 
-            ${hasFlavors ? `
+            \${hasFlavors ? \`
               <div class="flavor-options">
                 <div class="mini-label">Available Flavors</div>
                 <div class="pill-grid">
-                  ${item.flavors.map(flavor => `
-                    <div class="pill ${selectedExtraFlavor === flavor && isSelected ? 'selected' : ''}" data-parent="${item.id}" data-flavor="${flavor}">
-                      ${flavor}
+                  \${item.flavors.map(flavor => \`
+                    <div class="pill \${selectedExtraFlavor === flavor && isSelected ? 'selected' : ''}" data-parent="\${item.id}" data-flavor="\${flavor}">
+                      \${flavor}
                     </div>
-                  `).join('')}
+                  \`).join('')}
                 </div>
               </div>
-            ` : ''}
+            \` : ''}
           </button>
-        `;
+        \`;
       }).join('');
 
       document.querySelectorAll('#productsGrid .product-card').forEach(card => {
@@ -1235,35 +1187,35 @@
       cartCount.textContent = totalQty + (totalQty === 1 ? ' ITEM' : ' ITEMS');
       subtotalText.textContent = subtotal + ' JOD';
 
-      cartBody.innerHTML = cartItems.map(item => `
+      cartBody.innerHTML = cartItems.map(item => \`
         <div class="cart-item">
-          <img class="cart-img" src="${item.image}" alt="${item.title}">
+          <img class="cart-img" src="\${item.image}" alt="\${item.title}">
 
           <div>
-            <div class="cart-item-title">${item.title}</div>
-            <div class="cart-brand">${item.brand}</div>
+            <div class="cart-item-title">\${item.title}</div>
+            <div class="cart-brand">\${item.brand}</div>
 
             <div class="cart-options">
-              <strong>Gold standard 100% Whey:</strong> Gold Standard 100% Whey 5 lbs., ${item.wheyFlavor}<br>
-              <strong>Extra Product:</strong> ${item.extraProduct}${item.extraFlavor ? ' (' + item.extraType + ', ' + item.extraFlavor + ')' : ' (' + item.extraType + ')'}
+              <strong>Gold standard 100% Whey:</strong> Gold Standard 100% Whey 5 lbs., \${item.wheyFlavor}<br>
+              <strong>Extra Product:</strong> \${item.extraProduct}\${item.extraFlavor ? ' (' + item.extraType + ', ' + item.extraFlavor + ')' : ' (' + item.extraType + ')'}
             </div>
 
             <div class="cart-line">
-              <div class="cart-price">${item.price} JOD</div>
+              <div class="cart-price">\${item.price} JOD</div>
 
               <div style="display:flex;align-items:center;gap:8px;">
                 <div class="cart-qty">
-                  <button type="button" onclick="changeItemQty(${item.id}, -1)">-</button>
-                  <span>${item.qty}</span>
-                  <button type="button" onclick="changeItemQty(${item.id}, 1)">+</button>
+                  <button type="button" onclick="changeItemQty(\${item.id}, -1)">-</button>
+                  <span>\${item.qty}</span>
+                  <button type="button" onclick="changeItemQty(\${item.id}, 1)">+</button>
                 </div>
 
-                <button class="trash" type="button" onclick="removeItem(${item.id})">🗑</button>
+                <button class="trash" type="button" onclick="removeItem(\${item.id})">🗑</button>
               </div>
             </div>
           </div>
         </div>
-      `).join('');
+      \`).join('');
     }
 
     function changeItemQty(id, change) {
@@ -1297,6 +1249,1189 @@
     cartOverlay.addEventListener('click', closeCart);
 
     update();
-  </script>
+  <\/script>
 </body>
+</html>`;
+
+    const mobileHTML = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gold Standard Whey Offer - Mobile Premium</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --red: #f43131;
+      --dark: #111827;
+      --muted: #6b7280;
+      --line: #e8edf3;
+      --soft: #f8fafc;
+      --shadow: 0 14px 38px rgba(17,24,39,.07);
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      color: var(--dark);
+      background:
+        radial-gradient(circle at top left, rgba(244,49,49,.07), transparent 26%),
+        linear-gradient(180deg, #fff 0%, #f7f9fc 100%);
+      overflow-x: hidden;
+    }
+
+    .app {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      min-height: 100vh;
+      padding-bottom: 112px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar img {
+      height: 40px;
+      display: block;
+    }
+
+    .topbar span {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .page {
+      padding: 16px;
+    }
+
+    .hero {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(244,49,49,.09), transparent 28%),
+        linear-gradient(90deg, rgba(244,49,49,.035), transparent 52%);
+      pointer-events: none;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-main {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .hero-img-box {
+      height: 118px;
+      background: #fff;
+      border: 1px solid #edf1f5;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img {
+      max-width: 104px;
+      max-height: 104px;
+      object-fit: contain;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      color: var(--red);
+      background: rgba(244,49,49,.09);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 25px;
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 900;
+    }
+
+    .hero p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    .deal-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .deal-chip {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 11px 12px;
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .price-chip {
+      background: var(--red);
+      color: #fff;
+      border-radius: 16px;
+      padding: 11px 14px;
+      min-width: 102px;
+      text-align: center;
+      box-shadow: 0 12px 26px rgba(244,49,49,.18);
+    }
+
+    .price-chip small {
+      display: block;
+      color: rgba(255,255,255,.72);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .price-chip strong {
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .steps {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      margin: 14px 0;
+    }
+
+    .steps::-webkit-scrollbar { display: none; }
+
+    .step {
+      flex: 0 0 auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #7b8493;
+      font-size: 11px;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(17,24,39,.035);
+    }
+
+    .step .num {
+      width: 22px;
+      height: 22px;
+      border-radius: 8px;
+      background: #edf1f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+
+    .step.active .num {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .step.done .num {
+      background: #22c55e;
+      color: #fff;
+    }
+
+    .section {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 14px;
+    }
+
+    .section.whey {
+      border-top: 4px solid var(--red);
+    }
+
+    .section.extra {
+      border-top: 4px solid var(--dark);
+    }
+
+    .section-head {
+      margin-bottom: 14px;
+    }
+
+    .section-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      font-weight: 900;
+    }
+
+    .section p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.55;
+    }
+
+    .tag {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 7px 9px;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .tag.red {
+      background: rgba(244,49,49,.10);
+      color: var(--red);
+    }
+
+    .tag.dark {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .whey-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .whey-scroll::-webkit-scrollbar { display: none; }
+
+    .whey-card {
+      flex: 0 0 152px;
+      scroll-snap-align: start;
+    }
+
+    .product-list {
+      display: grid;
+      gap: 11px;
+    }
+
+    .card {
+      border: 2px solid #e6ebf2;
+      background: #fff;
+      border-radius: 21px;
+      padding: 12px;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+      transition: .2s ease;
+    }
+
+    .card.selected {
+      border-color: var(--red);
+      box-shadow: 0 14px 30px rgba(244,49,49,.09);
+    }
+
+    .card.selected::after {
+      content: "SELECTED";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--red);
+      color: #fff;
+      border-radius: 999px;
+      padding: 5px 7px;
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      z-index: 2;
+    }
+
+    .whey-card .img-box {
+      height: 126px;
+    }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .product-card.has-flavors {
+      display: block;
+    }
+
+    .product-main {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .img-box {
+      background: #fff;
+      border: 1px solid #edf1f5;
+      border-radius: 17px;
+      height: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-box img {
+      max-width: 100%;
+      max-height: 98px;
+      object-fit: contain;
+    }
+
+    .item-name {
+      color: var(--dark);
+      font-size: 14px;
+      line-height: 1.18;
+      font-weight: 900;
+      padding-right: 54px;
+    }
+
+    .item-type {
+      color: #7b8493;
+      font-size: 11.5px;
+      font-weight: 800;
+      margin-top: 5px;
+    }
+
+    .badge {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 9px;
+      border-radius: 999px;
+      padding: 6px 8px;
+      background: #f1f4f7;
+      color: #64748b;
+      font-size: 8.5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .badge.red {
+      background: rgba(244,49,49,.10);
+      color: var(--red);
+    }
+
+    .flavor-options {
+      display: none;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #edf1f5;
+    }
+
+    .card.selected .flavor-options {
+      display: block;
+    }
+
+    .mini-label {
+      color: #7b8493;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .pills {
+      display: grid;
+      gap: 8px;
+    }
+
+    .pill {
+      border: 1.5px solid #dbe2ea;
+      border-radius: 13px;
+      background: #fff;
+      color: var(--dark);
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 850;
+      cursor: pointer;
+    }
+
+    .pill.selected {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+
+    .warning {
+      display: none;
+      margin-top: 12px;
+      background: rgba(244,49,49,.09);
+      border: 1px solid rgba(244,49,49,.18);
+      color: #d82222;
+      border-radius: 15px;
+      padding: 11px;
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .warning.show { display: block; }
+
+    .sticky {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: min(100%, 430px);
+      z-index: 60;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--line);
+      box-shadow: 0 -16px 38px rgba(17,24,39,.10);
+      padding: 11px 16px 14px;
+    }
+
+    .sticky-summary {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 9px;
+    }
+
+    .summary-label {
+      color: #7b8493;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .summary-text {
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 250px;
+    }
+
+    .sticky-price {
+      color: var(--red);
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .sticky-actions {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 10px;
+    }
+
+    .qty {
+      height: 49px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      display: grid;
+      grid-template-columns: 34px 1fr 34px;
+      align-items: center;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .qty button {
+      height: 100%;
+      border: 0;
+      background: transparent;
+      color: #8b95a5;
+      font-size: 18px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .qty strong {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .add-btn {
+      height: 49px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--red);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .05em;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(244,49,49,.20);
+    }
+
+    .add-btn:disabled {
+      background: #d5dae2;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,11,15,.55);
+      z-index: 80;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+    }
+
+    .overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      width: min(100%, 430px);
+      max-height: 88vh;
+      transform: translateX(-50%) translateY(105%);
+      z-index: 90;
+      background: #f3f4f6;
+      border-radius: 26px 26px 0 0;
+      box-shadow: 0 -22px 58px rgba(0,0,0,.22);
+      transition: .3s ease;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      overflow: hidden;
+    }
+
+    .cart.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .cart-head {
+      padding: 14px 16px;
+      background: #f6f7f9;
+      border-bottom: 1px solid #e3e7ee;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-title {
+      font-size: 18px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .cart-count {
+      background: rgba(244,49,49,.10);
+      color: var(--red);
+      border-radius: 999px;
+      padding: 6px 8px;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .close {
+      border: 0;
+      background: transparent;
+      font-size: 28px;
+      color: #64748b;
+      cursor: pointer;
+    }
+
+    .cart-body {
+      overflow-y: auto;
+      padding: 16px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .cart-img {
+      width: 72px;
+      height: 72px;
+      background: #fff;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    .cart-name {
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .cart-brand {
+      color: #a0a7b4;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin: 3px 0 8px;
+    }
+
+    .cart-options {
+      color: #697386;
+      font-size: 11px;
+      line-height: 1.5;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .cart-options strong {
+      color: var(--dark);
+      font-weight: 900;
+    }
+
+    .cart-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-price {
+      color: var(--red);
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .cart-foot {
+      background: #fff;
+      border-top: 1px solid #e4e8ef;
+      padding: 16px;
+    }
+
+    .subtotal {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      color: #667085;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .subtotal strong {
+      color: var(--dark);
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .checkout {
+      width: 100%;
+      height: 52px;
+      border: 0;
+      border-radius: 999px;
+      background: #d92a2a;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 16px 35px rgba(223,53,47,.20);
+      cursor: pointer;
+    }
+
+    .continue {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: #9aa3b2;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding-top: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <header class="topbar">
+      <img src="https://www.firstnutrition.com/wp-content/uploads/2026/05/firstnutritionjo-logo.webp" alt="First Nutrition">
+      <span>Hot Offer</span>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <div class="hero-main">
+          <div class="hero-img-box">
+            <img id="mainProductImage" class="hero-img" src="https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25.webp?raw=true" alt="Gold Standard Whey">
+          </div>
+
+          <div>
+            <div class="eyebrow">Premium Combo</div>
+            <h1>Gold Standard Whey Combo</h1>
+            <p>Choose 1 whey flavor + 1 extra product.</p>
+          </div>
+        </div>
+
+        <div class="deal-row">
+          <div class="deal-chip">1 Whey + 1 Extra Product</div>
+          <div class="price-chip">
+            <small>Final Price</small>
+            <strong>100 JOD</strong>
+          </div>
+        </div>
+      </section>
+
+      <div class="steps">
+        <div id="progress1" class="step active"><span class="num">1</span> Whey</div>
+        <div id="progress2" class="step"><span class="num">2</span> Extra</div>
+        <div id="progress3" class="step"><span class="num">3</span> Cart</div>
+      </div>
+
+      <section class="section whey">
+        <div class="section-head">
+          <div class="section-title-row">
+            <div>
+              <h2>Choose whey flavor</h2>
+              <p>Swipe and select one flavor.</p>
+            </div>
+            <div class="tag red">Main</div>
+          </div>
+        </div>
+
+        <div id="wheyGrid" class="whey-scroll"></div>
+      </section>
+
+      <section class="section extra">
+        <div class="section-head">
+          <div class="section-title-row">
+            <div>
+              <h2>Choose extra product</h2>
+              <p>C4 and Xtend include flavor options.</p>
+            </div>
+            <div class="tag dark">Extra</div>
+          </div>
+        </div>
+
+        <div id="productsGrid" class="product-list"></div>
+
+        <div id="warning" class="warning">Please complete your selections before adding to cart.</div>
+      </section>
+    </main>
+
+    <div class="sticky">
+      <div class="sticky-summary">
+        <div>
+          <div class="summary-label">Your Selection</div>
+          <div id="stickySummary" class="summary-text">Choose your combo first</div>
+        </div>
+        <div class="sticky-price">100 JOD</div>
+      </div>
+
+      <div class="sticky-actions">
+        <div class="qty">
+          <button id="minusBtn" type="button">-</button>
+          <strong id="qtyText">1</strong>
+          <button id="plusBtn" type="button">+</button>
+        </div>
+
+        <button id="addBtn" class="add-btn" type="button" disabled>ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay"></div>
+
+  <aside id="cart" class="cart">
+    <div class="cart-head">
+      <div class="cart-title">🛍️ Your Cart <span id="cartCount" class="cart-count">0 ITEMS</span></div>
+      <button id="closeCart" class="close" type="button">×</button>
+    </div>
+
+    <div id="cartBody" class="cart-body"></div>
+
+    <div class="cart-foot">
+      <div class="subtotal">
+        <span>Subtotal</span>
+        <strong id="subtotalText">0 JOD</strong>
+      </div>
+
+      <button class="checkout" type="button">CHECKOUT NOW</button>
+      <button id="continueBtn" class="continue" type="button">CONTINUE SHOPPING</button>
+    </div>
+  </aside>
+
+  <script>
+    const wheyFlavors = [
+      {
+        id: 'chocolate',
+        name: 'Double Rich Chocolate',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25.webp?raw=true'
+      },
+      {
+        id: 'vanilla',
+        name: 'Vanilla Ice Cream',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25%20Vanilla%20Ice%20.webp?raw=true'
+      },
+      {
+        id: 'banana',
+        name: 'Banana Cream',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25%20banana.webp?raw=true'
+      },
+      {
+        id: 'strawberry',
+        name: 'Delicious Strawberry',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/Gold%20Standard%20100%25%20Surawberrv.webp?raw=true'
+      }
+    ];
+
+    const products = [
+      {
+        id: 'c4',
+        name: 'C4 Original',
+        type: 'Pre-Workout',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/C4%20Original.webp?raw=true',
+        flavors: ['Watermelon', 'Icy Blue Raspberry', 'Pink Lemonade']
+      },
+      {
+        id: 'xtend',
+        name: 'Xtend Original BCAA',
+        type: 'Recovery',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/extend.webp?raw=true',
+        flavors: ['Knockout Fruit Punch', 'Mango Madness', 'Watermelon Explosion']
+      },
+      {
+        id: 'curse',
+        name: 'The Curse',
+        type: 'Pre-Workout',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/The%20Curse.webp?raw=true',
+        flavors: []
+      },
+      {
+        id: 'citrulline',
+        name: 'R1 Citrulline',
+        type: 'Pump Support',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1-Citrulline.webp?raw=true',
+        flavors: []
+      },
+      {
+        id: 'lipo6',
+        name: 'LIPO-6 Black Active Formula',
+        type: 'Fat Burner',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/LIPO-6%20Black%20ActiveFormula.webp?raw=true',
+        flavors: []
+      },
+      {
+        id: 'amino9',
+        name: 'R1 Essential Amino 9',
+        type: 'Amino Acids',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1%20Essential%20Amino%209.webp?raw=true',
+        flavors: []
+      },
+      {
+        id: 'collagen',
+        name: 'R1 Collagen Peptides',
+        type: 'Collagen',
+        image: 'https://github.com/mahmoudnutritionjo-art/offers/blob/main/R1%20Collagen%20Peptides.webp?raw=true',
+        flavors: []
+      }
+    ];
+
+    let selectedWhey = null;
+    let selectedExtra = null;
+    let selectedExtraFlavor = null;
+    let qty = 1;
+    let cartItems = [];
+
+    const wheyGrid = document.getElementById('wheyGrid');
+    const productsGrid = document.getElementById('productsGrid');
+    const mainProductImage = document.getElementById('mainProductImage');
+    const addBtn = document.getElementById('addBtn');
+    const warning = document.getElementById('warning');
+    const qtyText = document.getElementById('qtyText');
+    const stickySummary = document.getElementById('stickySummary');
+
+    const progress1 = document.getElementById('progress1');
+    const progress2 = document.getElementById('progress2');
+    const progress3 = document.getElementById('progress3');
+
+    const overlay = document.getElementById('overlay');
+    const cart = document.getElementById('cart');
+    const cartBody = document.getElementById('cartBody');
+    const cartCount = document.getElementById('cartCount');
+    const subtotalText = document.getElementById('subtotalText');
+
+    function renderWhey() {
+      wheyGrid.innerHTML = wheyFlavors.map(item => \`
+        <button class="card whey-card \${selectedWhey === item.id ? 'selected' : ''}" data-id="\${item.id}" type="button">
+          <div class="img-box">
+            <img src="\${item.image}" alt="\${item.name}">
+          </div>
+          <div class="item-name">\${item.name}</div>
+          <div class="item-type">Gold Standard Whey 5 lbs</div>
+        </button>
+      \`).join('');
+
+      document.querySelectorAll('#wheyGrid .card').forEach(card => {
+        card.addEventListener('click', () => {
+          selectedWhey = card.dataset.id;
+          const whey = wheyFlavors.find(x => x.id === selectedWhey);
+          if (whey) {
+            mainProductImage.src = whey.image;
+            mainProductImage.alt = whey.name;
+          }
+          update();
+        });
+      });
+    }
+
+    function renderProducts() {
+      productsGrid.innerHTML = products.map(item => {
+        const isSelected = selectedExtra === item.id;
+        const hasFlavors = item.flavors.length > 0;
+
+        return \`
+          <button class="card \${hasFlavors ? 'has-flavors' : ''} \${isSelected ? 'selected' : ''}" data-id="\${item.id}" type="button">
+            <div class="\${hasFlavors ? 'product-main' : 'product-card'}">
+              <div class="img-box">
+                <img src="\${item.image}" alt="\${item.name}">
+              </div>
+
+              <div>
+                <div class="item-name">\${item.name}</div>
+                <div class="item-type">\${item.type}</div>
+                <div class="badge \${hasFlavors ? 'red' : ''}">
+                  \${hasFlavors ? 'Choose Flavor' : 'Single Item'}
+                </div>
+              </div>
+            </div>
+
+            \${hasFlavors ? \`
+              <div class="flavor-options">
+                <div class="mini-label">Available Flavors</div>
+                <div class="pills">
+                  \${item.flavors.map(flavor => \`
+                    <div class="pill \${selectedExtraFlavor === flavor && isSelected ? 'selected' : ''}" data-parent="\${item.id}" data-flavor="\${flavor}">
+                      \${flavor}
+                    </div>
+                  \`).join('')}
+                </div>
+              </div>
+            \` : ''}
+          </button>
+        \`;
+      }).join('');
+
+      document.querySelectorAll('#productsGrid .card').forEach(card => {
+        card.addEventListener('click', e => {
+          const pill = e.target.closest('.pill');
+
+          if (pill) {
+            selectedExtra = pill.dataset.parent;
+            selectedExtraFlavor = pill.dataset.flavor;
+            update();
+            return;
+          }
+
+          const productId = card.dataset.id;
+          const product = products.find(x => x.id === productId);
+
+          if (selectedExtra !== productId) selectedExtraFlavor = null;
+          selectedExtra = productId;
+          if (!product.flavors.length) selectedExtraFlavor = null;
+
+          update();
+        });
+      });
+    }
+
+    function isComplete() {
+      const extra = products.find(x => x.id === selectedExtra);
+      const needsFlavor = extra && extra.flavors.length > 0;
+      return Boolean(selectedWhey && selectedExtra && (!needsFlavor || selectedExtraFlavor));
+    }
+
+    function updateProgress() {
+      const complete = isComplete();
+      progress1.className = 'step ' + (selectedWhey ? 'done' : 'active');
+      progress2.className = 'step ' + (!selectedWhey ? '' : selectedExtra ? 'done' : 'active');
+      progress3.className = 'step ' + (complete ? 'done' : '');
+    }
+
+    function updateSticky() {
+      const whey = wheyFlavors.find(x => x.id === selectedWhey);
+      const extra = products.find(x => x.id === selectedExtra);
+
+      if (!whey && !extra) {
+        stickySummary.textContent = 'Choose your combo first';
+        return;
+      }
+
+      const wheyText = whey ? whey.name : 'Choose whey';
+      const extraText = extra ? extra.name + (selectedExtraFlavor ? ' - ' + selectedExtraFlavor : '') : 'Choose extra';
+
+      stickySummary.textContent = wheyText + ' • ' + extraText;
+    }
+
+    function update() {
+      renderWhey();
+      renderProducts();
+      addBtn.disabled = !isComplete();
+      warning.classList.toggle('show', !isComplete());
+      qtyText.textContent = qty;
+      updateProgress();
+      updateSticky();
+    }
+
+    function openCart() {
+      overlay.classList.add('show');
+      cart.classList.add('show');
+    }
+
+    function closeCart() {
+      overlay.classList.remove('show');
+      cart.classList.remove('show');
+    }
+
+    function addToCart() {
+      if (!isComplete()) {
+        warning.classList.add('show');
+        return;
+      }
+
+      const whey = wheyFlavors.find(x => x.id === selectedWhey);
+      const extra = products.find(x => x.id === selectedExtra);
+
+      cartItems.push({
+        id: Date.now(),
+        title: 'Gold Standard 100% Whey Offer 100JD',
+        brand: 'FIRST NUTRITION',
+        image: whey.image,
+        wheyFlavor: whey.name,
+        extraProduct: extra.name,
+        extraFlavor: selectedExtraFlavor || '',
+        qty,
+        price: 100
+      });
+
+      renderCart();
+      openCart();
+    }
+
+    function renderCart() {
+      const totalQty = cartItems.reduce((sum, item) => sum + item.qty, 0);
+      const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+      cartCount.textContent = totalQty + (totalQty === 1 ? ' ITEM' : ' ITEMS');
+      subtotalText.textContent = subtotal + ' JOD';
+
+      cartBody.innerHTML = cartItems.map(item => \`
+        <div class="cart-item">
+          <img class="cart-img" src="\${item.image}" alt="\${item.title}">
+          <div>
+            <div class="cart-name">\${item.title}</div>
+            <div class="cart-brand">\${item.brand}</div>
+            <div class="cart-options">
+              <strong>Whey:</strong> \${item.wheyFlavor}<br>
+              <strong>Extra:</strong> \${item.extraProduct}\${item.extraFlavor ? ' (' + item.extraFlavor + ')' : ''}
+            </div>
+            <div class="cart-line">
+              <div class="cart-price">\${item.price} JOD</div>
+              <div style="font-size:12px;font-weight:900;color:#697386;">Qty: \${item.qty}</div>
+            </div>
+          </div>
+        </div>
+      \`).join('');
+    }
+
+    document.getElementById('minusBtn').addEventListener('click', () => {
+      qty = Math.max(1, qty - 1);
+      qtyText.textContent = qty;
+    });
+
+    document.getElementById('plusBtn').addEventListener('click', () => {
+      qty += 1;
+      qtyText.textContent = qty;
+    });
+
+    addBtn.addEventListener('click', addToCart);
+    document.getElementById('closeCart').addEventListener('click', closeCart);
+    document.getElementById('continueBtn').addEventListener('click', closeCart);
+    overlay.addEventListener('click', closeCart);
+
+    update();
+  <\/script>
+</body>
+</html>`;
+
+    document.open();
+    document.write(isMobile ? mobileHTML : desktopHTML);
+    document.close();
+  </script>
+</head>
+<body></body>
 </html>
